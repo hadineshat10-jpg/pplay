@@ -12,6 +12,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Create dummy TMDB key (needed by cmake, not used for playback)
+        run: echo "0000000000000000" > pscrap/tmdb.key
+
       - name: Pull prebuilt PS4 toolchain image
         run: docker pull xfangfang/pacbrew:latest
 
